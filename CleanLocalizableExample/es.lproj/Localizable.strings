@@ -1,0 +1,8 @@
+"LocalizableListTableViewController:Fruit:Apple" = "Manzana";
+"LocalizableListTableViewController:Fruit:Grape" = "Uva";
+"LocalizableListTableViewController:Fruit:Orange" = "Naranja";
+"LocalizableListTableViewController:Fruit:Strawberry" = "Fresa";
+"RandomViewController:Vehicle:Boat" = "Barco";
+"RandomViewController:Vehicle:Car" = "Coche";
+"RandomViewController:Vehicle:Plane" = "Avión";
+"RandomViewController:Vehicle:Train" = "Tren";

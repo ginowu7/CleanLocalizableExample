@@ -1,0 +1,11 @@
+"LocalizableListTableViewController:Fruit:Apple" = "苹果";
+"LocalizableListTableViewController:Fruit:Grape" = "葡萄";
+"LocalizableListTableViewController:Fruit:Orange" = "橙子";
+"LocalizableListTableViewController:Fruit:Strawberry" = "草莓";
+"LoginViewController:UIAlertController:Message" = "请先登录";
+"LoginViewController:UIButton:Title" = "登录";
+"RandomViewController:Vehicle:Boat" = "船";
+"RandomViewController:Vehicle:Car" = "汽车";
+"RandomViewController:Vehicle:Plane" = "平面";
+"RandomViewController:Vehicle:Train" = "🚄";
+"UserProfileViewController:UINavigationItem:Title" = "用户";

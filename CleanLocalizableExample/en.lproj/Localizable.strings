@@ -1,0 +1,11 @@
+"LocalizableListTableViewController:Fruit:Apple" = "Apple";
+"LocalizableListTableViewController:Fruit:Grape" = "Grape";
+"LocalizableListTableViewController:Fruit:Orange" = "Orange";
+"LoginViewController:UIAlertController:Message" = "Please sign in first";
+"LoginViewController:UIButton:Title" = "Log in";
+"RandomViewController:Vehicle:Boat" = "Boat";
+"RandomViewController:Vehicle:Car" = "Car";
+"RandomViewController:Vehicle:Plane" = "Plane";
+"RandomViewController:Vehicle:Train" = "Train";
+"UserProfileViewController:UINavigationItem:Title" = "User";
+"UserProfileViewController:UINavigationItem:Title" = "User Title";
