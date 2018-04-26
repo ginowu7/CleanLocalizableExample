@@ -1,7 +1,7 @@
 #!/bin/bash 
 
 project_name="CleanLocalizableExample"
-development_file="./$project_name/en.lproj/Localizable.strings"
+development_file="./"$project_name"/en.lproj/Localizable.strings"
 
 es_duplicates=9
 es_match=8
@@ -21,7 +21,7 @@ sort_and_find_duplicates() {
 
 keys_match() {
 	echo "== Checking if keys match in localizable files: $1 =="
-	base_keys=`sed 's/^[^"]*"\([^"]*\)".*/\1/' $development_file`
+	base_keys=`sed 's/^[^"]*"\([^"]*\)".*/\1/' "$development_file"`
 	localizable_keys=`sed 's/^[^"]*"\([^"]*\)".*/\1/' $1`
 	is_different=`diff <(echo "$base_keys") <(echo "$localizable_keys")`
 	
@@ -34,9 +34,9 @@ keys_match() {
 
 keys_not_used() {	
 	echo "== Checking keys not used in code =="
-	sed 's/^[^"]*"\([^"]*\)".*/\1/' $development_file | 
+	sed 's/^[^"]*"\([^"]*\)".*/\1/' "$development_file" | 
 	while read key; do
-		exist=`grep -rl "NSLocalizedString(\"$key\"" --include \*.swift --include \*.m ./$project_name/*`
+		exist=`grep -rl "NSLocalizedString(\"$key\"" --include \*.swift --include \*.m ./"$project_name"/*`
 		if [ -z "${exist}" ]; then
 			echo "warning: Found keys not used in code"
 			echo "warning: \"$key\" is not used being used"
@@ -46,9 +46,9 @@ keys_not_used() {
 
 keys_not_included() {
 	echo "== Checking keys not included in localizable =="
-	base_keys=`sed 's/^[^"]*"\([^"]*\)".*/\1/' $development_file`	
+	base_keys=`sed 's/^[^"]*"\([^"]*\)".*/\1/' "$development_file"`	
 	# grep NSLocalizedString("anything until first quotes" | sed everything in between quotes | sort and unique
-	grep -r -o "NSLocalizedString(\"[^\"]*\"" --include \*.swift --include \*.m ./$project_name/* --exclude ./$project_name/NSLocalizedString.swift | 
+	grep -r -o "NSLocalizedString(\"[^\"]*\"" --include \*.swift --include \*.m ./"$project_name"/* --exclude ./"$project_name"/NSLocalizedString.swift | 
 	grep -v "%d" |
 	sed 's/^[^"]*"\([^"]*\)".*/\1/' | 
 	sort -u | 
@@ -62,7 +62,7 @@ keys_not_included() {
 }
 
 
-find ./$project_name -name 'Localizable.strings' |
+find ./"$project_name" -name 'Localizable.strings' |
 while read file; do
   sort_and_find_duplicates $file
 	keys_match $file
